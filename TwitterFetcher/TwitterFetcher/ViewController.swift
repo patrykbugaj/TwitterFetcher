@@ -9,9 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private let CurrencyDataService = Injector.get(injectable: CurrencyData.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.CurrencyDataService.fetchCurrency()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4C2FFE985670C24BE715130B /* Pods_TwitterFetcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050B5A4EB648CEAE5BE5B182 /* Pods_TwitterFetcherUITests.framework */; };
+		9C2B871620751D2300ACF597 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B871520751D2300ACF597 /* Data.swift */; };
+		9CB00245207503A70038121B /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB00244207503A70038121B /* Injector.swift */; };
+		9CB00247207503D60038121B /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB00246207503D60038121B /* Module.swift */; };
+		9CB00249207503F00038121B /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB00248207503F00038121B /* Injectable.swift */; };
+		9CB0024C207504380038121B /* ServicesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0024B207504380038121B /* ServicesModule.swift */; };
+		9CB0024E207504520038121B /* UtilsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0024D207504520038121B /* UtilsModule.swift */; };
+		9CB002512075069D0038121B /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB002502075069D0038121B /* CurrencyData.swift */; };
+		9CB002572075072D0038121B /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB002562075072D0038121B /* Currency.swift */; };
 		9CDC2F772074ECDC0019C73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC2F762074ECDC0019C73C /* AppDelegate.swift */; };
 		9CDC2F792074ECDC0019C73C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC2F782074ECDC0019C73C /* ViewController.swift */; };
 		9CDC2F7C2074ECDC0019C73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDC2F7A2074ECDC0019C73C /* Main.storyboard */; };
@@ -43,6 +51,14 @@
 		4F8C33E91E69D3704030A895 /* Pods-TwitterFetcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterFetcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterFetcher/Pods-TwitterFetcher.release.xcconfig"; sourceTree = "<group>"; };
 		5A4D4B98E87CF0EDA91504AC /* Pods-TwitterFetcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterFetcherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterFetcherTests/Pods-TwitterFetcherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74B8411214EB343A163533C4 /* Pods_TwitterFetcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterFetcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C2B871520751D2300ACF597 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		9CB00244207503A70038121B /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		9CB00246207503D60038121B /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		9CB00248207503F00038121B /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		9CB0024B207504380038121B /* ServicesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesModule.swift; sourceTree = "<group>"; };
+		9CB0024D207504520038121B /* UtilsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsModule.swift; sourceTree = "<group>"; };
+		9CB002502075069D0038121B /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
+		9CB002562075072D0038121B /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		9CDC2F732074ECDC0019C73C /* TwitterFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDC2F762074ECDC0019C73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CDC2F782074ECDC0019C73C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +130,91 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9C2B871220751D0800ACF597 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B871420751D1500ACF597 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9C2B871420751D1500ACF597 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B871520751D2300ACF597 /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CB00242207503650038121B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9CB002432075036D0038121B /* Swinject */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9CB002432075036D0038121B /* Swinject */ = {
+			isa = PBXGroup;
+			children = (
+				9CB0024A207504200038121B /* Modules */,
+				9CB00244207503A70038121B /* Injector.swift */,
+				9CB00246207503D60038121B /* Module.swift */,
+				9CB00248207503F00038121B /* Injectable.swift */,
+			);
+			path = Swinject;
+			sourceTree = "<group>";
+		};
+		9CB0024A207504200038121B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9CB0024B207504380038121B /* ServicesModule.swift */,
+				9CB0024D207504520038121B /* UtilsModule.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9CB0024F2075051E0038121B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9CB00252207506A10038121B /* CurrencyData */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9CB00252207506A10038121B /* CurrencyData */ = {
+			isa = PBXGroup;
+			children = (
+				9CB002502075069D0038121B /* CurrencyData.swift */,
+			);
+			path = CurrencyData;
+			sourceTree = "<group>";
+		};
+		9CB00253207506FB0038121B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B871220751D0800ACF597 /* Data */,
+				9CB00254207507030038121B /* Currency */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9CB00254207507030038121B /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				9CB002552075071F0038121B /* Model */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		9CB002552075071F0038121B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CB002562075072D0038121B /* Currency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9CDC2F6A2074ECDC0019C73C = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +241,9 @@
 		9CDC2F752074ECDC0019C73C /* TwitterFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				9CB00253207506FB0038121B /* Domain */,
+				9CB0024F2075051E0038121B /* Services */,
+				9CB00242207503650038121B /* Utils */,
 				9CDC2F762074ECDC0019C73C /* AppDelegate.swift */,
 				9CDC2F782074ECDC0019C73C /* ViewController.swift */,
 				9CDC2F7A2074ECDC0019C73C /* Main.storyboard */,
@@ -377,9 +481,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TwitterFetcher/Pods-TwitterFetcher-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -459,8 +580,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB002572075072D0038121B /* Currency.swift in Sources */,
+				9C2B871620751D2300ACF597 /* Data.swift in Sources */,
 				9CDC2F792074ECDC0019C73C /* ViewController.swift in Sources */,
+				9CB00247207503D60038121B /* Module.swift in Sources */,
+				9CB002512075069D0038121B /* CurrencyData.swift in Sources */,
+				9CB00245207503A70038121B /* Injector.swift in Sources */,
+				9CB00249207503F00038121B /* Injectable.swift in Sources */,
 				9CDC2F772074ECDC0019C73C /* AppDelegate.swift in Sources */,
+				9CB0024E207504520038121B /* UtilsModule.swift in Sources */,
+				9CB0024C207504380038121B /* ServicesModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +757,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54K3PLCC85;
+				DEVELOPMENT_TEAM = 7GRALMSTC4;
 				INFOPLIST_FILE = TwitterFetcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TwitterFetcher.TwitterFetcher;
@@ -644,7 +773,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54K3PLCC85;
+				DEVELOPMENT_TEAM = 7GRALMSTC4;
 				INFOPLIST_FILE = TwitterFetcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TwitterFetcher.TwitterFetcher;

@@ -4,6 +4,13 @@
 target 'TwitterFetcher' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  pod 'Swinject'
+  pod 'Alamofire', '~> 4.7'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
+  pod 'ObjectMapper', '~> 3.1'
+  pod 'AlamofireObjectMapper', '~> 5.0'
+pod 'Alamofire-SwiftyJSON'
 
   # Pods for TwitterFetcher
 

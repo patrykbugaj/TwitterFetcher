@@ -14,6 +14,7 @@
 		9CDC2F812074ECDC0019C73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDC2F7F2074ECDC0019C73C /* LaunchScreen.storyboard */; };
 		9CDC2F8C2074ECDC0019C73C /* TwitterFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC2F8B2074ECDC0019C73C /* TwitterFetcherTests.swift */; };
 		9CDC2F972074ECDC0019C73C /* TwitterFetcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC2F962074ECDC0019C73C /* TwitterFetcherUITests.swift */; };
+		9CDC2FA52074F4450019C73C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9CDC2FA42074F4450019C73C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9CDC2F922074ECDC0019C73C /* TwitterFetcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterFetcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDC2F962074ECDC0019C73C /* TwitterFetcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterFetcherUITests.swift; sourceTree = "<group>"; };
 		9CDC2F982074ECDC0019C73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CDC2FA42074F4450019C73C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				9CDC2F752074ECDC0019C73C /* TwitterFetcher */,
+				9CDC2FA42074F4450019C73C /* .gitignore */,
 				9CDC2F8A2074ECDC0019C73C /* TwitterFetcherTests */,
 				9CDC2F952074ECDC0019C73C /* TwitterFetcherUITests */,
 				9CDC2F742074ECDC0019C73C /* Products */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CDC2FA52074F4450019C73C /* .gitignore in Resources */,
 				9CDC2F812074ECDC0019C73C /* LaunchScreen.storyboard in Resources */,
 				9CDC2F7E2074ECDC0019C73C /* Assets.xcassets in Resources */,
 				9CDC2F7C2074ECDC0019C73C /* Main.storyboard in Resources */,

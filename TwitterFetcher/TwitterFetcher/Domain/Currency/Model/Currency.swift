@@ -7,23 +7,18 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class Currency: Mappable {
-    var currency: String?
-    var code: String?
-    var mid: Float?
+class Currency {
+    var currency: String
+    var code: String
+    var mid: Float
     
-    required convenience init?(map: Map) {
-        self.init()
-    }
-    
-
-    func mapping(map: Map) {
-        currency <- map["currency"]
-        code <- map["code"]
-        mid <- map["mid"]
+    init(currency: String, code: String, mid: Float) {
+        self.currency = currency
+        self.code = code
+        self.mid = mid
     }
 }
+
 
 

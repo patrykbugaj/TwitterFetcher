@@ -10,7 +10,7 @@ target 'TwitterFetcher' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'ObjectMapper', '~> 3.1'
   pod 'AlamofireObjectMapper', '~> 5.0'
-pod 'Alamofire-SwiftyJSON'
+  pod 'Alamofire-SwiftyJSON'
 
   # Pods for TwitterFetcher
 

@@ -19,47 +19,25 @@ class CurrencyData: NSObject, Injectable {
         super.init()
     }
     
-    
-//    func fetchCurrency() {
-//        let URL = "https://api.nbp.pl/api/exchangerates/tables/a?format=JSON"
-//
-//        Alamofire.request(URL).responseObject { (response: DataResponse<Data>) in
-//            let currencyResponse = response.result.value
-//
-//            if let error = response.result.error {
-//                let errorString = error.localizedDescription
-//                print(errorString)
-//            }
-//
-//            if let rates = currencyResponse?.rates {
-//                for currenncy in rates {
-//                    print(currenncy.currency)
-//                }
-//            }
-//        }
-//    }
-    
-    func fetchCurrency() {
-      
+    func fetchCurrency(_ callBack:@escaping ([Currency]) -> Void) {
+
         let URL = "https://api.nbp.pl/api/exchangerates/tables/a?format=JSON"
-        Alamofire.request(URL, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
+        var currenciesArray = [Currency]()
+        Alamofire.request(URL, method: .get).validate().responseJSON { (response) -> Void in
+            if let value = response.result.value {
                 let json = JSON(value)
                 let currency = json.array
                 for item in currency! {
                     for rates in item["rates"].arrayValue {
-                        print(rates["currency"])
-                        print(rates["code"])
-                        print(rates["mid"])
+                        currenciesArray.append(Currency(currency: rates["currency"].stringValue, code: rates["code"].stringValue, mid: rates["mid"].floatValue))
                     }
                 }
-            case .failure(let error):
-                print(error)
-            default:
-                print("default")
             }
         }
+        let delayTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            callBack(currenciesArray)
         }
+    }
     
 }

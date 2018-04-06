@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Swinject
 
 struct CurrencyViewData {
     let code: String
@@ -15,21 +14,14 @@ struct CurrencyViewData {
     let mid: Float
 }
 
-protocol CurrencyView: NSObjectProtocol {
-    func startLoading()
-    func finishLoading()
-    func setCurrencies(_ currencies: [CurrencyViewData])
-    func setEmptyCurrencies()
-}
-
-class CurrencyPresenter: NSObject, Injectable {
-    private let CurrencyDataService = Injector.get(injectable: CurrencyData.self)
-   
-    required init(container: Container) {
-        super.init()
-    }
+class CurrencyPresenter {
     
+    fileprivate var currencyDataService : CurrencyData
     weak fileprivate var currencyView : CurrencyView?
+    
+     init(currencyDataService: CurrencyData) {
+        self.currencyDataService = currencyDataService
+    }
     
     func attachView(_ view: CurrencyView) {
         currencyView = view
@@ -41,7 +33,7 @@ class CurrencyPresenter: NSObject, Injectable {
     
     func getCurrencys() {
         self.currencyView?.startLoading()
-        CurrencyDataService.fetchCurrency{ [weak self] currencies in
+        currencyDataService.fetchCurrency{ [weak self] currencies in
             self?.currencyView?.finishLoading()
             if currencies.count == 0 {
                 self?.currencyView?.setEmptyCurrencies()

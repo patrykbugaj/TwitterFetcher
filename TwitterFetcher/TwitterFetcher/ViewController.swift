@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swinject
 
 class ViewController: UIViewController {
     
@@ -15,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private let CurrencyPresenterService = Injector.get(injectable: CurrencyPresenter.self)
+    private let currencyPresenter = CurrencyPresenter(currencyDataService: CurrencyData())
     private var currenciesToDisplay = [CurrencyViewData]()
     
     override func viewDidLoad() {
@@ -23,8 +22,8 @@ class ViewController: UIViewController {
         currencyTable.dataSource = self
         activityIndicator?.hidesWhenStopped = true
         
-        CurrencyPresenterService.attachView(self)
-        CurrencyPresenterService.getCurrencys()
+        currencyPresenter.attachView(self)
+        currencyPresenter.getCurrencys()
     }
 
     override func didReceiveMemoryWarning() {

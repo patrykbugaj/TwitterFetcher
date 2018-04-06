@@ -9,7 +9,42 @@
 import XCTest
 @testable import TwitterFetcher
 
+class CurrencyDataServiceMock: CurrencyData {
+    fileprivate let currencies: [Currency]
+    init(currencies: [Currency]) {
+        self.currencies = currencies
+    }
+    
+    override func fetchCurrency(_ callBack: @escaping ([Currency]) -> Void) {
+        callBack(currencies)
+    }
+   
+}
+
+class CurrencyViewMock: NSObject, CurrencyView {
+    var setCurrenciesCalled = false
+    var setEmptyCurrenciesCalled = false
+    
+    func setCurrencies(_ currencies: [CurrencyViewData]) {
+        setCurrenciesCalled = true
+    }
+    
+    func setEmptyCurrencies() {
+        setCurrenciesCalled = true
+    }
+    
+    func startLoading() {
+    }
+    
+    func finishLoading() {
+    }
+}
+
+
 class TwitterFetcherTests: XCTestCase {
+    
+    let emptyCurrencyDataServiceMock = CurrencyDataServiceMock(currencies:[Currency]())
+    let filledCurrencyDataServiceMock = CurrencyDataServiceMock(currencies:[Currency(currency: "USA", code: "USD", mid: 3.4311)])
     
     override func setUp() {
         super.setUp()
@@ -21,16 +56,27 @@ class TwitterFetcherTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testSetEmptyIfNoCurrenciesAvailable() {
+        let currencyViewMock = CurrencyViewMock()
+        let currencyPresenterInTest = CurrencyPresenter(currencyDataService: emptyCurrencyDataServiceMock)
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        currencyPresenterInTest.attachView(currencyViewMock)
+    
+        currencyPresenterInTest.getCurrencys()
+        XCTAssertTrue(currencyViewMock.setEmptyCurrenciesCalled)
+        
+    }
+
+    func testSetCurrencies() {
+        let currencyViewMock = CurrencyViewMock()
+        let currencyPresenterInTest =  CurrencyPresenter(currencyDataService: filledCurrencyDataServiceMock)
+ 
+        currencyPresenterInTest.attachView(currencyViewMock)
+
+        currencyPresenterInTest.getCurrencys()
+
+        XCTAssertTrue(currencyViewMock.setCurrenciesCalled)
+
     }
     
 }

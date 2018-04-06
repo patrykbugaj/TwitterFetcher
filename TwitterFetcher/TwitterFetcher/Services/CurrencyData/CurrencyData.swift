@@ -7,18 +7,12 @@
 //
 
 import Foundation
-import AlamofireObjectMapper
-import Swinject
-import ObjectMapper
 import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
-class CurrencyData: NSObject, Injectable {
-    required init(container: Container) {
-        super.init()
-    }
-    
+class CurrencyData{
+
     func fetchCurrency(_ callBack:@escaping ([Currency]) -> Void) {
 
         let URL = "https://api.nbp.pl/api/exchangerates/tables/a?format=JSON"

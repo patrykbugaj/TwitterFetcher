@@ -6,6 +6,8 @@
 	<dict>
 		<key>TwitterFetcher.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
@@ -15,17 +17,17 @@
 		<key>9CDC2F722074ECDC0019C73C</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>9CDC2F862074ECDC0019C73C</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>9CDC2F912074ECDC0019C73C</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
-class CurrencyData{
+class CurrencyData: NSObject, CurrencyDataService {
 
     func fetchCurrency(_ callBack:@escaping ([Currency]) -> Void) {
 

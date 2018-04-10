@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CurrencyView {
     
     @IBOutlet weak var currencyTable: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private let currencyPresenter = CurrencyPresenter(currencyDataService: CurrencyData())
+    private let currencyPresenter = CurrencyPresenter(currencyDataService: CurrencyData(), dateService: DateService())
     private var currenciesToDisplay = [CurrencyViewData]()
+    private var dateToShow = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +25,67 @@ class ViewController: UIViewController {
         
         currencyPresenter.attachView(self)
         currencyPresenter.getCurrencys()
+        currencyPresenter.getDate()
+    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func startLoading() {
+        activityIndicator?.startAnimating()
+    }
+    
+    func finishLoading() {
+        activityIndicator?.stopAnimating()
+    }
+    
+    func setCurrencies(_ currencies: [CurrencyViewData]) {
+        currenciesToDisplay = currencies
+        currencyTable?.isHidden = false
+        emptyView?.isHidden = true
+        currencyTable.reloadData()
+        print("setCurrencies")
+    }
+    
+    func setEmptyCurrencies() {
+        currencyTable?.isHidden = true
+        emptyView?.isHidden = false
+        
+    }
+    
+    func setDate(_ date: String) {
+        dateToShow = date
+       print("heheehehe")
+    }
+    
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+  
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        headerView.backgroundColor = UIColor.clear
+        let label = UILabel(frame: CGRect(x:30, y:15, width: headerView.bounds.size.width, height: 30))
+        
+        label.text = dateToShow
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        headerView.addSubview(label)
+        
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currenciesToDisplay.count
     }
@@ -47,26 +100,27 @@ extension ViewController: UITableViewDataSource {
     
 }
 
-extension ViewController: CurrencyView {
-    func startLoading() {
-        activityIndicator?.startAnimating()
-    }
-    
-    func finishLoading() {
-        activityIndicator?.stopAnimating()
-    }
-    
-    func setCurrencies(_ currencies: [CurrencyViewData]) {
-        currenciesToDisplay = currencies
-        currencyTable?.isHidden = false
-        emptyView?.isHidden = true
-        currencyTable.reloadData()
-    }
-    
-    func setEmptyCurrencies() {
-        currencyTable?.isHidden = true
-        emptyView?.isHidden = false
-    }
-    
-    
-}
+//extension ViewController: CurrencyView {
+//    func startLoading() {
+//        activityIndicator?.startAnimating()
+//    }
+//
+//    func finishLoading() {
+//        activityIndicator?.stopAnimating()
+//    }
+//
+//    func setCurrencies(_ currencies: [CurrencyViewData]) {
+//        currenciesToDisplay = currencies
+//        currencyTable?.isHidden = false
+//        emptyView?.isHidden = true
+//        currencyTable.reloadData()
+//    }
+//
+//    func setEmptyCurrencies() {
+//        currencyTable?.isHidden = true
+//        emptyView?.isHidden = false
+//    }
+//
+//
+//}
+

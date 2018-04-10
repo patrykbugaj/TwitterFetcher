@@ -16,11 +16,13 @@ struct CurrencyViewData {
 
 class CurrencyPresenter {
     
-    fileprivate var currencyDataService : CurrencyData
+    fileprivate var currencyDataService : CurrencyDataService
+    fileprivate var dateService : TodayDateService
     weak fileprivate var currencyView : CurrencyView?
     
-     init(currencyDataService: CurrencyData) {
+    init(currencyDataService: CurrencyDataService, dateService: TodayDateService) {
         self.currencyDataService = currencyDataService
+        self.dateService = dateService
     }
     
     func attachView(_ view: CurrencyView) {
@@ -44,6 +46,11 @@ class CurrencyPresenter {
                 self?.currencyView?.setCurrencies(mappedCurrencies)
             }
         }
+    }
+    
+    func getDate() {
+        self.currencyView?.setDate(dateService.getCurrentDate())
+        
     }
 
 }

@@ -12,9 +12,14 @@ protocol CurrencyView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
     func setCurrencies(_ currencies: [CurrencyViewData])
+    func setDate(_ date: String)
     func setEmptyCurrencies()
 }
 
+protocol CurrencyDataService: NSObjectProtocol {
+    func fetchCurrency(_ callBack:@escaping ([Currency]) -> Void)
+}
 
-
-
+protocol TodayDateService: NSObjectProtocol {
+    func getCurrentDate() -> String
+}

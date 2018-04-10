@@ -9,13 +9,13 @@
 import XCTest
 @testable import TwitterFetcher
 
-class CurrencyDataServiceMock: CurrencyData {
+class CurrencyDataServiceMock: NSObject, CurrencyDataService{
     fileprivate let currencies: [Currency]
     init(currencies: [Currency]) {
         self.currencies = currencies
     }
     
-    override func fetchCurrency(_ callBack: @escaping ([Currency]) -> Void) {
+    func fetchCurrency(_ callBack: @escaping ([Currency]) -> Void) {
         callBack(currencies)
     }
    
@@ -30,7 +30,7 @@ class CurrencyViewMock: NSObject, CurrencyView {
     }
     
     func setEmptyCurrencies() {
-        setCurrenciesCalled = true
+        setEmptyCurrenciesCalled = true
     }
     
     func startLoading() {

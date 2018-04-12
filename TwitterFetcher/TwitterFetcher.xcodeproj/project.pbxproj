@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C2FFE985670C24BE715130B /* Pods_TwitterFetcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050B5A4EB648CEAE5BE5B182 /* Pods_TwitterFetcherUITests.framework */; };
 		9C65E371207B7E4700D814B7 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65E370207B7E4700D814B7 /* DateService.swift */; };
+		9CA8AC0F207FB75C0082EF4F /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8AC0E207FB75C0082EF4F /* CurrencyCell.swift */; };
 		9CB002512075069D0038121B /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB002502075069D0038121B /* CurrencyData.swift */; };
 		9CB002572075072D0038121B /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB002562075072D0038121B /* Currency.swift */; };
 		9CD526AD207787EE00ED4269 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD526AC207787EE00ED4269 /* Protocols.swift */; };
@@ -48,6 +49,7 @@
 		5A4D4B98E87CF0EDA91504AC /* Pods-TwitterFetcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterFetcherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterFetcherTests/Pods-TwitterFetcherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74B8411214EB343A163533C4 /* Pods_TwitterFetcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterFetcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C65E370207B7E4700D814B7 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
+		9CA8AC0E207FB75C0082EF4F /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		9CB002502075069D0038121B /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 		9CB002562075072D0038121B /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		9CD526AC207787EE00ED4269 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -129,6 +131,22 @@
 			path = DateService;
 			sourceTree = "<group>";
 		};
+		9CA8AC0C207FB7350082EF4F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9CA8AC0D207FB73B0082EF4F /* CurrencyCell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9CA8AC0D207FB73B0082EF4F /* CurrencyCell */ = {
+			isa = PBXGroup;
+			children = (
+				9CA8AC0E207FB75C0082EF4F /* CurrencyCell.swift */,
+			);
+			path = CurrencyCell;
+			sourceTree = "<group>";
+		};
 		9CB0024F2075051E0038121B /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +199,7 @@
 		9CDC2F6A2074ECDC0019C73C = {
 			isa = PBXGroup;
 			children = (
+				9CA8AC0C207FB7350082EF4F /* UI */,
 				9CDC2F752074ECDC0019C73C /* TwitterFetcher */,
 				9CDC2FA42074F4450019C73C /* .gitignore */,
 				9CDC2F8A2074ECDC0019C73C /* TwitterFetcherTests */,
@@ -540,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA8AC0F207FB75C0082EF4F /* CurrencyCell.swift in Sources */,
 				9CE0B8502076670E0025FFBC /* CurrencyPresenter.swift in Sources */,
 				9CB002572075072D0038121B /* Currency.swift in Sources */,
 				9CDC2F792074ECDC0019C73C /* ViewController.swift in Sources */,
